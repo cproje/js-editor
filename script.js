@@ -5,6 +5,31 @@
   let _console = document.getElementById('editor-console');
   let _button = document.getElementById('editor-run-button');
   
+  function save() {
+    let data = JSON.stringify({
+      code: _input.value,
+      scrollX: _input.scrollLeft,
+      scrollY: _input.scrollTop,
+      start: _input.selectionStart,
+      end: _input.selectionEnd,
+    });
+    localStorage.setItem('__js__editor__', data);
+  }
+  
+  function restore() {
+    if (localStorage.getItem('__js__editor__')) {
+      let data = JSON.parse(localStorage.getItem('__js__editor__'));
+      _input.value = data.code;
+      _input.scrollLeft = data.scrollX;
+      _input.scrollTop = data.scrollY;
+      _input.selectionStart = data.start;
+      _input.selectionEnd = data.end;
+      _input.value = `// Example\n\nlet message = 'Welcome';\nconsole.log(message);`;
+      update();
+      _input.focus();
+    }
+  }
+  
   function update() {
     _output.innerHTML = _input.value
       .replace(/</g, '&lt;')
@@ -24,6 +49,7 @@
       })
       .replace(/\n|$/g, '<br>')
       ;
+    save();
   }
 
   _input.addEventListener('input', update);
@@ -34,7 +60,7 @@
   });
 
   _input.addEventListener('keydown', (e) => {
-    if (e.keyCode == 9 || e.keyCode == 116) {
+    if (e.keyCode == 9 || e.keyCode == 121) {
       e.preventDefault();
     }
   });
@@ -50,7 +76,7 @@
       update();
     }
 
-    if (e.keyCode == 116) {
+    if (e.keyCode == 121) {
       run();
     }
   });
@@ -120,8 +146,6 @@
   };
 
   _button.addEventListener('click', run);
-  _input.value = `// Example\n\nlet message = 'Welcome';\nconsole.log(message);`;
-  update();
-  _input.focus();
+  restore();
 
 })();
