@@ -58,6 +58,7 @@
   _input.addEventListener('scroll', () => {
     _output.scrollLeft = _input.scrollLeft;
     _output.scrollTop = _input.scrollTop;
+    save();
   });
 
   _input.addEventListener('keydown', (e) => {
