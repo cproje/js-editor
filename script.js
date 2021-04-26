@@ -74,12 +74,13 @@
       _input.value = `${first}  ${last}`;
       _input.selectionStart = start + 2;
       _input.selectionEnd = start + 2;
-      update();
     }
 
     if (e.keyCode == 121) {
       run();
     }
+    
+    update();
   });
 
   function run() {
