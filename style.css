@@ -16,7 +16,7 @@
 }
 
 ::selection {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 ::-webkit-scrollbar {
@@ -139,7 +139,7 @@ hr {
 }
 
 .boolean {
-  color: tomato;
+  color: darkcyan;
 }
 
 .comment {
@@ -148,7 +148,7 @@ hr {
 }
 
 .info {
-  color: #b0b0b0;
+  color: #c0c0c0;
 }
 
 .error {
