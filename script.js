@@ -39,7 +39,7 @@
       .replace(/\b(\w+)(?=\()\b/g, '<span class="struct">$1</span>')
       .replace(/\b(true|false)\b/g, '<span class="boolean">$1</span>')
       .replace(/\b(\d+(\.\d+)?)\b/g, '<span class="number">$1</span>')
-      .replace(/('[^']+'|`[^`]+`)/g, (_ ,value) => {
+      .replace(/('[^']*'|`[^`]*`)/g, (_ ,value) => {
         value = value.replace(/\//g, '&sol;');
         value = value.replace(/<[^>]+>/g, '');
         return `<span class="string">${value}</span>`;
