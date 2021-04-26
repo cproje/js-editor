@@ -24,10 +24,11 @@
       _input.scrollTop = data.scrollY;
       _input.selectionStart = data.start;
       _input.selectionEnd = data.end;
+    } else {
       _input.value = `// Example\n\nlet message = 'Welcome';\nconsole.log(message);`;
-      update();
-      _input.focus();
     }
+    update();
+    _input.focus();
   }
   
   function update() {
