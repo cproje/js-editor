@@ -5,6 +5,8 @@
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 :focus {
@@ -117,7 +119,7 @@ hr {
           flex: 1;
   min-height: 240px;
   padding: 1.5rem;
-  background-color: #fcfcfc;
+  border-right: 1px solid #f0f0f0;
   overflow-y: auto;
 }
 
@@ -187,5 +189,7 @@ hr {
        -moz-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
+    border: 0;
+    border-top: 1px solid #f0f0f0;
   }
 }
