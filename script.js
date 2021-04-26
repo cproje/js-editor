@@ -133,6 +133,7 @@
   const LOG = console.log;
 
   console.clear = function () {
+    location.reload();
     _console.innerHTML = '';
     CLEAR();
   };
