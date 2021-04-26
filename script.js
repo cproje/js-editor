@@ -113,7 +113,7 @@
         return `<span class="number">${obj}</span>`;
 
       case 'string':
-        return `<span class="string">"${obj}"</span>`;
+        return `<span class="string">${obj}</span>`;
 
       case 'undefined':
         return `<span class="keyword">${obj}</span>`;
