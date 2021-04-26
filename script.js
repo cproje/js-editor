@@ -107,7 +107,7 @@
         return `<span class="boolean">${obj}</span>`;
 
       case 'function':
-        return `<span class="keyword">function</span> ${obj.name ? obj.name : '(empty)'}`;
+        return `<span class="keyword">function</span> ${obj.name ? obj.name : '?'}`;
       
       case 'number':
         return `<span class="number">${obj}</span>`;
