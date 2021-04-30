@@ -46,7 +46,7 @@
     _output.innerHTML = _input.value
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/\b(await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|function|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|super|switch|static|this|throw|try|typeof|var|void|while|with|yield)\b/g, '<span class="keyword">$1</span>')
+      .replace(/\b(await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|function|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|super|switch|static|this|throw|try|typeof|undefined|var|void|while|with|yield)\b/g, '<span class="keyword">$1</span>')
       .replace(/\b(\w+)(?=\()\b/g, '<span class="struct">$1</span>')
       .replace(/\b(true|false)\b/g, '<span class="boolean">$1</span>')
       .replace(/\b(\d+(\.\d+)?|0x[0-9a-fA-F]+|0b[01]+)\b/g, '<span class="number">$1</span>')
@@ -125,6 +125,9 @@
         return `<span class="keyword">${obj}</span>`;
 
       default:
+        if (obj === null) {
+          return `<span class="keyword">null</span>`;
+        }
         let html = `<span class="info">{</span>`;
         for (let name in obj) {
           if (Object.prototype.hasOwnProperty.call(obj, name)) {
