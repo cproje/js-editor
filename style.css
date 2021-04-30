@@ -126,6 +126,7 @@ hr {
 
 .keyword {
   color: crimson;
+  color: #c800a4;
 }
 
 .struct {
@@ -134,10 +135,12 @@ hr {
 
 .number {
   color: royalblue;
+  color: #3a00dc;
 }
 
 .string {
   color: seagreen;
+  color: #df0002;
 }
 
 .boolean {
@@ -146,6 +149,7 @@ hr {
 
 .comment {
   color: silver;
+  color: #008e00;
   font-style: italic;
 }
 
